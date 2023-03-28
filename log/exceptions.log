@@ -1,0 +1,561 @@
+{
+  error: Error: Route.post() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as post] (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\express\lib\router\route.js:211:15)
+      at Function.post (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\express\lib\router\index.js:521:19)
+      at Object.<anonymous> (C:\Users\Gsus\Desktop\Health Care\healthcare-api\src\routes\/s3.routes.js:6:8)
+      at Module._compile (node:internal/modules/cjs/loader:1275:14)
+      at Module._compile (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\pirates\lib\index.js:136:24)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)
+      at Object.newLoader [as .js] (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\pirates\lib\index.js:141:7)
+      at Module.load (node:internal/modules/cjs/loader:1133:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:972:12)
+      at Module.require (node:internal/modules/cjs/loader:1157:19)
+      at require (node:internal/modules/helpers:119:18)
+      at Object.<anonymous> (C:\Users\Gsus\Desktop\Health Care\healthcare-api\src\/app.js:11:1)
+      at Module._compile (node:internal/modules/cjs/loader:1275:14)
+      at Module._compile (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\pirates\lib\index.js:136:24)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)
+      at Object.newLoader [as .js] (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\pirates\lib\index.js:141:7)
+      at Module.load (node:internal/modules/cjs/loader:1133:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:972:12)
+      at Module.require (node:internal/modules/cjs/loader:1157:19)
+      at require (node:internal/modules/helpers:119:18)
+      at Object.<anonymous> (C:\Users\Gsus\Desktop\Health Care\healthcare-api\src\/index.js:1:1)
+      at Module._compile (node:internal/modules/cjs/loader:1275:14)
+      at Module._compile (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\pirates\lib\index.js:136:24)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)
+      at Object.newLoader [as .js] (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\pirates\lib\index.js:141:7)
+      at Module.load (node:internal/modules/cjs/loader:1133:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:972:12)
+      at Function.runMain (node:internal/modules/run_main:83:12)
+      at Object.<anonymous> (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\@babel\node\src\_babel-node.ts:223:12)
+      at Module._compile (node:internal/modules/cjs/loader:1275:14)
+      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1329:10)
+      at Module.load (node:internal/modules/cjs/loader:1133:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:972:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)
+      at node:internal/main/run_main_module:23:47,
+  level: 'error',
+  message: 'uncaughtException: Route.post() requires a callback function but got a [object Undefined]\n' +
+    'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\express\\lib\\router\\route.js:211:15)\n' +
+    '    at Function.post (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\express\\lib\\router\\index.js:521:19)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\routes\\/s3.routes.js:6:8)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1275:14)\n' +
+    '    at Module._compile (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:136:24)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)\n' +
+    '    at Object.newLoader [as .js] (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:141:7)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1133:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:972:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1157:19)\n' +
+    '    at require (node:internal/modules/helpers:119:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\/app.js:11:1)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1275:14)\n' +
+    '    at Module._compile (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:136:24)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)\n' +
+    '    at Object.newLoader [as .js] (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:141:7)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1133:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:972:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1157:19)\n' +
+    '    at require (node:internal/modules/helpers:119:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\/index.js:1:1)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1275:14)\n' +
+    '    at Module._compile (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:136:24)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)\n' +
+    '    at Object.newLoader [as .js] (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:141:7)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1133:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:972:12)\n' +
+    '    at Function.runMain (node:internal/modules/run_main:83:12)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\@babel\\node\\src\\_babel-node.ts:223:12)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1275:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1329:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1133:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:972:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)\n' +
+    '    at node:internal/main/run_main_module:23:47',
+  stack: 'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\express\\lib\\router\\route.js:211:15)\n' +
+    '    at Function.post (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\express\\lib\\router\\index.js:521:19)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\routes\\/s3.routes.js:6:8)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1275:14)\n' +
+    '    at Module._compile (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:136:24)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)\n' +
+    '    at Object.newLoader [as .js] (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:141:7)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1133:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:972:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1157:19)\n' +
+    '    at require (node:internal/modules/helpers:119:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\/app.js:11:1)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1275:14)\n' +
+    '    at Module._compile (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:136:24)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)\n' +
+    '    at Object.newLoader [as .js] (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:141:7)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1133:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:972:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1157:19)\n' +
+    '    at require (node:internal/modules/helpers:119:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\/index.js:1:1)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1275:14)\n' +
+    '    at Module._compile (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:136:24)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)\n' +
+    '    at Object.newLoader [as .js] (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:141:7)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1133:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:972:12)\n' +
+    '    at Function.runMain (node:internal/modules/run_main:83:12)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\@babel\\node\\src\\_babel-node.ts:223:12)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1275:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1329:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1133:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:972:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)\n' +
+    '    at node:internal/main/run_main_module:23:47',
+  exception: true,
+  date: 'Mon Mar 27 2023 18:16:27 GMT-0600 (Central Standard Time)',
+  process: {
+    pid: 12464,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v19.7.0',
+    argv: [
+      'node',
+      'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\index.js'
+    ],
+    memoryUsage: {
+      rss: 135450624,
+      heapTotal: 96088064,
+      heapUsed: 60713456,
+      external: 20783325,
+      arrayBuffers: 18902309
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 39353.625 },
+  trace: [
+    {
+      column: 15,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as post]',
+      line: 211,
+      method: '<computed> [as post]',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.post',
+      line: 521,
+      method: 'post',
+      native: false
+    },
+    {
+      column: 8,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\routes\\/s3.routes.js',
+      function: null,
+      line: 6,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1275,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js',
+      function: 'Module._compile',
+      line: 136,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1329,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 7,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js',
+      function: 'Object.newLoader [as .js]',
+      line: 141,
+      method: 'js]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1133,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 972,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1157,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 119,
+      method: null,
+      native: false
+    },
+    {
+      column: 1,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\/app.js',
+      function: null,
+      line: 11,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1275,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js',
+      function: 'Module._compile',
+      line: 136,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1329,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 7,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js',
+      function: 'Object.newLoader [as .js]',
+      line: 141,
+      method: 'js]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1133,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 972,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1157,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 119,
+      method: null,
+      native: false
+    },
+    {
+      column: 1,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\/index.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1275,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js',
+      function: 'Module._compile',
+      line: 136,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1329,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 7,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js',
+      function: 'Object.newLoader [as .js]',
+      line: 141,
+      method: 'js]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1133,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 972,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.runMain',
+      line: 83,
+      method: 'runMain',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\@babel\\node\\src\\_babel-node.ts',
+      function: null,
+      line: 223,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1275,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1329,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1133,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 972,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 83,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 23,
+      method: null,
+      native: false
+    }
+  ],
+  label: 'File Upload Service',
+  timestamp: '2023-03-28T00:16:27.230Z'
+}
+{
+  error: Error: Route.post() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as post] (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\express\lib\router\route.js:211:15)
+      at Function.post (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\express\lib\router\index.js:521:19)
+      at Object.<anonymous> (C:\Users\Gsus\Desktop\Health Care\healthcare-api\src\routes\/s3.routes.js:6:8)
+      at Module._compile (node:internal/modules/cjs/loader:1275:14)
+      at Module._compile (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\pirates\lib\index.js:136:24)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)
+      at Object.newLoader [as .js] (C:\Users\Gsus\Desktop\Health Care\healthcare-api\node_modules\pirates\lib\index.js:141:7)
+      at Module.load (node:internal/modules/cjs/loader:1133:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:972:12)
+      at Module.require (node:internal/modules/cjs/loader:1157:19),
+  level: 'error',
+  message: 'uncaughtException: Route.post() requires a callback function but got a [object Undefined]\n' +
+    'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\express\\lib\\router\\route.js:211:15)\n' +
+    '    at Function.post (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\express\\lib\\router\\index.js:521:19)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\routes\\/s3.routes.js:6:8)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1275:14)\n' +
+    '    at Module._compile (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:136:24)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)\n' +
+    '    at Object.newLoader [as .js] (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:141:7)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1133:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:972:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1157:19)',
+  stack: 'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\express\\lib\\router\\route.js:211:15)\n' +
+    '    at Function.post (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\express\\lib\\router\\index.js:521:19)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\routes\\/s3.routes.js:6:8)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1275:14)\n' +
+    '    at Module._compile (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:136:24)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1329:10)\n' +
+    '    at Object.newLoader [as .js] (C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js:141:7)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1133:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:972:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1157:19)',
+  exception: true,
+  date: 'Mon Mar 27 2023 18:16:47 GMT-0600 (Central Standard Time)',
+  process: {
+    pid: 8248,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v19.7.0',
+    argv: [
+      'node',
+      'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\index.js'
+    ],
+    memoryUsage: {
+      rss: 128245760,
+      heapTotal: 88485888,
+      heapUsed: 60844216,
+      external: 20711759,
+      arrayBuffers: 18830743
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 39373.984 },
+  trace: [
+    {
+      column: 15,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as post]',
+      line: 211,
+      method: '<computed> [as post]',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\express\\lib\\router\\index.js',
+      function: 'Function.post',
+      line: 521,
+      method: 'post',
+      native: false
+    },
+    {
+      column: 8,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\src\\routes\\/s3.routes.js',
+      function: null,
+      line: 6,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1275,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js',
+      function: 'Module._compile',
+      line: 136,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1329,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 7,
+      file: 'C:\\Users\\Gsus\\Desktop\\Health Care\\healthcare-api\\node_modules\\pirates\\lib\\index.js',
+      function: 'Object.newLoader [as .js]',
+      line: 141,
+      method: 'js]',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1133,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 972,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1157,
+      method: 'require',
+      native: false
+    }
+  ],
+  label: 'File Upload Service',
+  timestamp: '2023-03-28T00:16:47.585Z'
+}
