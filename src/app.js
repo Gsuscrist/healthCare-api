@@ -11,18 +11,32 @@ import doctorRoutes from "./routes/doctor.routes";
 import diagnosisQuestionsRoutes from "./routes/diagnosisQuestions.routes";
 import snsRoutes from "./routes/sns.routes";
 import s3Routes from "./routes/s3.routes";
+import cors from 'cors';
 import multer from "multer";
 
 const app =express();
 createRoles();
-
- app.use(express.json());
+app.use(cors());
+app.use(express.json());
 app.use(fileUpload());
 
 app.set('pkg',pkg);
 app.get('/',(req, res)=>{
     res.json(app.get('pkg'));
 });
+
+
+ // var whitelist =['url']
+ // var corsOptions = {
+ // origin: function (origin,cb){
+ //       if(whitelist.indexOf(origin !==1)) {
+ //           cb(null,true);
+ //       }
+ //           else
+ //               { cb(new Error('not allowed by CORS'));}
+ //       }
+ // }
+
 
 
 app.use('/patient', patientRoutes);

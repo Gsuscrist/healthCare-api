@@ -92,7 +92,7 @@ var signUp = /*#__PURE__*/function () {
           patientSaved = _context.sent;
           //llamada ala cola con rabbitMQ
           queue = 'subscription';
-          connection = _amqplib["default"].connect('amqp://');
+          connection = _amqplib["default"].connect('amqp://healthCare:secureHealth@44.206.223.169:5672');
           console.log('connection successful');
           _context.next = 38;
           return connection;
