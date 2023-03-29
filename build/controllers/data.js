@@ -45,7 +45,7 @@ var createData = /*#__PURE__*/function () {
           }
           queue = 'event-initialize';
           _context.next = 15;
-          return _amqplib["default"].connect('amqp://healthCare:secureHealth@44.206.223.169:5672');
+          return _amqplib["default"].connect('amqp://');
         case 15:
           connection = _context.sent;
           console.log('connection successful');

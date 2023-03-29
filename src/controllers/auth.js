@@ -30,7 +30,7 @@ export const signUp = async (req, res) => {
     const patientSaved = await newPatient.save();
     //llamada ala cola con rabbitMQ
     const queue = 'subscription';
-    const connection = amqplib.connect('amqp://healthCare:secureHealth@44.206.223.169:5672');
+    const connection = amqplib.connect('amqp://');
     console.log('connection successful');
     const channelSubscribe = (await connection).createChannel();
     console.log('chanel created');

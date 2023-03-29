@@ -20,7 +20,7 @@ import Data from '../models/Data';
 
         if(bpm>100 || bpm<60){
             const queue = 'event-initialize';
-            const connection = await amqplib.connect('amqp://healthCare:secureHealth@44.206.223.169:5672');
+            const connection = await amqplib.connect('amqp://');
             console.log('connection successful')
             const channelEventInitialize = await connection.createChannel();
             console.log('Chanel created')
