@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import config from '../config'
 import Role from "../models/Role";
 import * as secureCrypt from "../libs/secureCrypt";
+import amqplib from "amqplib";
 
 
 export const signUp = async (req, res) => {
@@ -27,6 +28,19 @@ export const signUp = async (req, res) => {
     }
 
     const patientSaved = await newPatient.save();
+    //llamada ala cola con rabbitMQ
+    const queue = 'subscription';
+    const connection = amqplib.connect('amqp://healthCare:secureHealth@44.206.223.169:5672');
+    console.log('connection successful');
+    const channelSubscribe = (await connection).createChannel();
+    console.log('chanel created');
+    let status = (await channelSubscribe).sendToQueue(queue, Buffer.from(JSON.stringify({
+        email: patientSaved.email,
+        emergencyEmail: patientSaved.emergencyContact.contactEmail
+    })))
+    await channelSubscribe.close();
+
+
 
     const token = jwt.sign({id: patientSaved._id}, config.SECRET_PT, {
         expiresIn: 172800 //48hrs

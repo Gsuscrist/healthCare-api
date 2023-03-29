@@ -41,8 +41,12 @@ import Data from '../models/Data';
 
     export const getDataOf = async (req, res) => {
     const patientId = req.params.patientId;
-       const patientData = await Data.find({patientId});
-       res.status(200).json(patientData);
+        const minuteData = await Data.find({patientId}).sort({$natural:-1}).limit(12).lean();
+        const totalBeats = minuteData.reduce((sum,value)=>(
+            typeof value.heartBeat == "number" ? sum + value.heartBeat : sum ),0);
+        const bpm=totalBeats/12;
+
+       res.status(200).json({bpm});
    }
 
     export const updateData = async (req, res) => {
