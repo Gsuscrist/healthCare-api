@@ -44,7 +44,7 @@ var verifyToken = /*#__PURE__*/function () {
           });
         case 11:
           user2 = _context.sent;
-          if (user) {
+          if (!(!user || !user2)) {
             _context.next = 14;
             break;
           }
@@ -52,29 +52,21 @@ var verifyToken = /*#__PURE__*/function () {
             message: 'invalid token'
           }));
         case 14:
-          if (user2) {
-            _context.next = 16;
-            break;
-          }
-          return _context.abrupt("return", res.status(404).json({
-            message: 'invalid token'
-          }));
-        case 16:
           next();
-          _context.next = 23;
+          _context.next = 21;
           break;
-        case 19:
-          _context.prev = 19;
+        case 17:
+          _context.prev = 17;
           _context.t0 = _context["catch"](0);
           console.error(_context.t0);
           return _context.abrupt("return", res.status(401).json({
             message: 'unauthorized'
           }));
-        case 23:
+        case 21:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 19]]);
+    }, _callee, null, [[0, 17]]);
   }));
   return function verifyToken(_x, _x2, _x3) {
     return _ref.apply(this, arguments);

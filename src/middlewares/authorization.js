@@ -13,8 +13,7 @@ try {
     req.id = decode.id;
     const user = await Patient.findById(req.id, {password:0})
     const user2 = await Doctor.findById(req.id, {password:0})
-    if (!user) return res.status(404).json({message: 'invalid token'});
-    if (!user2) return res.status(404).json({message: 'invalid token'});
+    if (!user || !user2) return res.status(404).json({message: 'invalid token'});
 
     next();
 
