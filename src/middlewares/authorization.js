@@ -12,7 +12,8 @@ try {
     const decode = jwt.verify(token,config.SECRET_PT);
     req.id = decode.id;
     const user = await Patient.findById(req.id, {password:0})
-    if (!user) return res.status(404).json({message: 'invalid token'});
+    const user2 = await Doctor.findById(req.id, {password:0})
+    if (!user || !user2) return res.status(404).json({message: 'invalid token'});
 
     next();
 

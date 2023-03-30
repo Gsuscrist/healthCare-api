@@ -16,7 +16,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 var verifyToken = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(req, res, next) {
-    var token, decode, user;
+    var token, decode, user, user2;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -38,29 +38,35 @@ var verifyToken = /*#__PURE__*/function () {
           });
         case 8:
           user = _context.sent;
-          if (user) {
-            _context.next = 11;
+          _context.next = 11;
+          return _Doctor["default"].findById(req.id, {
+            password: 0
+          });
+        case 11:
+          user2 = _context.sent;
+          if (!(!user || !user2)) {
+            _context.next = 14;
             break;
           }
           return _context.abrupt("return", res.status(404).json({
             message: 'invalid token'
           }));
-        case 11:
-          next();
-          _context.next = 18;
-          break;
         case 14:
-          _context.prev = 14;
+          next();
+          _context.next = 21;
+          break;
+        case 17:
+          _context.prev = 17;
           _context.t0 = _context["catch"](0);
           console.error(_context.t0);
           return _context.abrupt("return", res.status(401).json({
             message: 'unauthorized'
           }));
-        case 18:
+        case 21:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 14]]);
+    }, _callee, null, [[0, 17]]);
   }));
   return function verifyToken(_x, _x2, _x3) {
     return _ref.apply(this, arguments);
