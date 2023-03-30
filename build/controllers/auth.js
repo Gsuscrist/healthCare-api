@@ -6,12 +6,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.signUp = exports.signIn = void 0;
 var _Patient = _interopRequireDefault(require("../models/Patient"));
+var _Doctor = _interopRequireDefault(require("../models/Doctor"));
 var _jsonwebtoken = _interopRequireDefault(require("jsonwebtoken"));
 var _config = _interopRequireDefault(require("../config"));
 var _Role = _interopRequireDefault(require("../models/Role"));
 var secureCrypt = _interopRequireWildcard(require("../libs/secureCrypt"));
 var _amqplib = _interopRequireDefault(require("amqplib"));
-var _Doctor = _interopRequireDefault(require("../models/Doctor"));
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -128,7 +128,7 @@ var signUp = /*#__PURE__*/function () {
 exports.signUp = signUp;
 var signIn = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(req, res) {
-    var _req$body2, email, password, patient, doctor, matchpss, _token, _rol, matchPassword, token, rol;
+    var _req$body2, email, password, patient, doctor, _matchPassword, _token, _rol, matchPassword, token, rol;
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
@@ -140,7 +140,7 @@ var signIn = /*#__PURE__*/function () {
         case 3:
           patient = _context2.sent;
           if (patient) {
-            _context2.next = 18;
+            _context2.next = 17;
             break;
           }
           _context2.next = 7;
@@ -149,21 +149,25 @@ var signIn = /*#__PURE__*/function () {
           }).populate("role");
         case 7:
           doctor = _context2.sent;
-          _context2.next = 10;
+          if (!doctor) res.status(400).json({
+            message: "user not founded"
+          });
+          _context2.next = 11;
           return secureCrypt.comparePassword(password, doctor.password);
-        case 10:
-          matchpss = _context2.sent;
-          if (matchpss) {
-            _context2.next = 13;
+        case 11:
+          _matchPassword = _context2.sent;
+          if (_matchPassword) {
+            _context2.next = 14;
             break;
           }
           return _context2.abrupt("return", res.status(401).json({
             token: null,
             message: 'invalid password'
           }));
-        case 13:
+        case 14:
+          // console.log(patient);
           _token = _jsonwebtoken["default"].sign({
-            id: patient._id
+            id: doctor._id
           }, _config["default"].SECRET_PT, {
             expiresIn: 86400 //24hrs
           });
@@ -172,29 +176,24 @@ var signIn = /*#__PURE__*/function () {
           });
           res.json({
             token: _token,
-            id: patient._id,
+            id: doctor._id,
             role: _rol[0]
           });
-          _context2.next = 19;
-          break;
-        case 18:
-          return _context2.abrupt("return", res.status(400).json({
-            message: "user not founded"
-          }));
-        case 19:
-          _context2.next = 21;
+        case 17:
+          ;
+          _context2.next = 20;
           return secureCrypt.comparePassword(password, patient.password);
-        case 21:
+        case 20:
           matchPassword = _context2.sent;
           if (matchPassword) {
-            _context2.next = 24;
+            _context2.next = 23;
             break;
           }
           return _context2.abrupt("return", res.status(401).json({
             token: null,
             message: 'invalid password'
           }));
-        case 24:
+        case 23:
           // console.log(patient);
           token = _jsonwebtoken["default"].sign({
             id: patient._id
@@ -209,7 +208,7 @@ var signIn = /*#__PURE__*/function () {
             id: patient._id,
             role: rol[0]
           });
-        case 27:
+        case 26:
         case "end":
           return _context2.stop();
       }
