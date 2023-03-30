@@ -55,29 +55,31 @@ export const signIn = async (req, res) => {
 
     if (!patient){
         const doctor = await Doctor.findOne({email}).populate("role")
-        if (!doctor){return res.status(400).json({message: "user not founded" });}
+        if (!doctor){return res.status(400).json({message: "user not founded" });}else {
+            const matchPassword = await secureCrypt.comparePassword(password, doctor.password)
+            if (!matchPassword)return res.status(401).json({token: null, message: 'invalid password'})
 
-        const matchPassword = await secureCrypt.comparePassword(password, doctor.password)
+            const token = jwt.sign({id: doctor._id}, config.SECRET_PT, {
+                expiresIn: 86400 //24hrs
+            })
+            const rol = patient.role.map(role => role.id)
+            res.json({token, id:doctor._id, role:rol[0]})
+        }
+        
+    } else{
+        const matchPassword = await secureCrypt.comparePassword(password, patient.password)
+
         if (!matchPassword)return res.status(401).json({token: null, message: 'invalid password'})
 
-        const token = jwt.sign({id: doctor._id}, config.SECRET_PT, {
+        // console.log(patient);
+        const token = jwt.sign({id: patient._id}, config.SECRET_PT, {
             expiresIn: 86400 //24hrs
         })
         const rol = patient.role.map(role => role.id)
-        res.json({token, id:doctor._id, role:rol[0]})
+        res.json({token, id:patient._id, role:rol[0]})
+    }
 
-    } 
 
-    const matchPassword = await secureCrypt.comparePassword(password, patient.password)
-
-    if (!matchPassword)return res.status(401).json({token: null, message: 'invalid password'})
-
-    // console.log(patient);
-    const token = jwt.sign({id: patient._id}, config.SECRET_PT, {
-        expiresIn: 86400 //24hrs
-    })
-    const rol = patient.role.map(role => role.id)
-    res.json({token, id:patient._id, role:rol[0]})
 }
 
 
