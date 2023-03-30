@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb://127.0.0.1:27017/HealthCare")
+mongoose.connect("mongodb+srv://healthCare:secureHealth@healthcare.zlay3ab.mongodb.net/?retryWrites=true&w=majority")
     .then(db => console.log("database connection execute successfully"))
     .catch(error => console.log(error));
