@@ -2,9 +2,9 @@ import {Router} from "express";
 const router=Router();
 import * as doctor from '../controllers/doctor'
 import * as authorization from '../middlewares/authorization'
-import * as validation from '../middlewares/authorization'
+import * as validation from '../middlewares/validation'
 
-router.post('/',authorization.verifyToken,doctor.createDoctor );
+router.post('/',authorization.verifyToken,validation.checkDuplicateEmail ,doctor.createDoctor );
 router.get('/:id',authorization.verifyToken, doctor.getDoctor);
 router.get('/all',authorization.verifyToken, doctor.getAll)
 router.put('/:id',authorization.verifyToken, doctor.updateDoctor);

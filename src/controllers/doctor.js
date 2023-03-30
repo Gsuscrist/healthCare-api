@@ -1,6 +1,5 @@
 import Doctor from "../models/Doctor";
 import * as secureCrypt from '../libs/secureCrypt'
-import {re} from "@babel/core/lib/vendor/import-meta-resolve";
 import Role from "../models/Role";
 export const createDoctor= async (req,res)=>{
 const {name, lastName, gender, dateOfBirth, phoneNumber, email, password,photoURL,
