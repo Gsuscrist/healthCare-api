@@ -4,7 +4,6 @@ import config from '../config'
 import Role from "../models/Role";
 import * as secureCrypt from "../libs/secureCrypt";
 import amqplib from "amqplib";
-import Doctor from "../models/Doctor";
 
 
 export const signUp = async (req, res) => {
@@ -53,33 +52,18 @@ export const signIn = async (req, res) => {
 
     const patient = await Patient.findOne({email}).populate("role")
 
-    if (!patient){
-        const doctor = await Doctor.findOne({email}).populate("role")
+    if (!patient) return res.status(400).json({message: "patient not founded" });
 
-            const matchPassword = await secureCrypt.comparePassword(password, doctor.password)
-            if (!matchPassword)return res.status(401).json({token: null, message: 'invalid password'})
+    const matchPassword = await secureCrypt.comparePassword(password, patient.password)
 
-            const token = jwt.sign({id: doctor._id}, config.SECRET_PT, {
-                expiresIn: 86400 //24hrs
-            })
-            const rol = patient.role.map(role => role.id)
-            res.json({token, id:doctor._id, role:rol[0]})
+    if (!matchPassword)return res.status(401).json({token: null, message: 'invalid password'})
 
-
-    } else{
-        const matchPassword = await secureCrypt.comparePassword(password, patient.password)
-
-        if (!matchPassword)return res.status(401).json({token: null, message: 'invalid password'})
-
-        // console.log(patient);
-        const token = jwt.sign({id: patient._id}, config.SECRET_PT, {
-            expiresIn: 86400 //24hrs
-        })
-        const rol = patient.role.map(role => role.id)
-        res.json({token, id:patient._id, role:rol[0]})
-    }
-
-
+    // console.log(patient);
+    const token = jwt.sign({id: patient._id}, config.SECRET_PT, {
+        expiresIn: 86400 //24hrs
+    })
+    const rol = patient.role.map(role => role.id)
+    res.json({token, id:patient._id, role:rol[0]})
 }
 
 
