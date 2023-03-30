@@ -16,13 +16,18 @@ medicalCardId, role} = req.body
         const foundedRol = await Role.find({name: {$in: role}});
         newDoctor.role = foundedRol.map(role => role._id)
     }else {
-        const role = await Role.findOne({name: "patient"})
+        const role = await Role.findOne({name: "doctor"})
         newDoctor.role = [role._id];
     }
 
     const doctorSaved = await newDoctor.save();
     res.status(200).json(doctorSaved)
 
+}
+
+export const getAll =async (req,res)=>{
+     const doctors = await Doctor.find()
+    res.status(200).json(doctors)
 }
 
 export const getDoctor = async (req,res) =>{
