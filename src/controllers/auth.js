@@ -55,7 +55,7 @@ export const signIn = async (req, res) => {
 
     if (!patient){
         const doctor = await Doctor.findOne({email}).populate("role")
-        if (!doctor){return res.status(400).json({message: "user not founded" });}else {
+
             const matchPassword = await secureCrypt.comparePassword(password, doctor.password)
             if (!matchPassword)return res.status(401).json({token: null, message: 'invalid password'})
 
@@ -64,8 +64,8 @@ export const signIn = async (req, res) => {
             })
             const rol = patient.role.map(role => role.id)
             res.json({token, id:doctor._id, role:rol[0]})
-        }
-        
+
+
     } else{
         const matchPassword = await secureCrypt.comparePassword(password, patient.password)
 
