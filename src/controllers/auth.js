@@ -30,23 +30,19 @@ export const signUp = async (req, res) => {
     const patientSaved = await newPatient.save();
     //llamada ala cola con rabbitMQ
     const queue = 'subscription';
-    const connection = amqplib.connect('amqp://');
+    const connection = amqplib.connect('amqp://healthCare:secureHealth@44.206.223.169:5672');
     console.log('connection successful');
     const channelSubscribe = (await connection).createChannel();
     console.log('chanel created');
-    let status = (await channelSubscribe).sendToQueue(queue, Buffer.from(JSON.stringify({
-        email: patientSaved.email,
-        emergencyEmail: patientSaved.emergencyContact.contactEmail
-    })))
-    await channelSubscribe.close();
-
-
-
     const token = jwt.sign({id: patientSaved._id}, config.SECRET_PT, {
         expiresIn: 172800 //48hrs
     })
-    res.status(200).json({token});
+    let status = (await channelSubscribe).sendToQueue(queue, Buffer.from(JSON.stringify({
+        email: patientSaved.email,
+        emergencyEmail: patientSaved.emergencyContact.contactEmail,
+    })))
 
+    res.status(200).json({token});
 
 }
 
@@ -66,7 +62,8 @@ export const signIn = async (req, res) => {
     const token = jwt.sign({id: patient._id}, config.SECRET_PT, {
         expiresIn: 86400 //24hrs
     })
-    res.json({token})
+    const rol = patient.role.map(role => role.id)
+    res.json({token, id:patient._id, role:rol[0]})
 }
 
 
